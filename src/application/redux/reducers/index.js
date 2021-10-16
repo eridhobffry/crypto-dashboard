@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import { DefaultReducer } from './default'
+import { cryptoReducer } from './crypto'
 
 const reducers = combineReducers({
-    default: DefaultReducer
+    crypto: cryptoReducer
 })
 
 const appReducer = (state, action) => {

@@ -1,1 +1,0 @@
-export {getDefault} from './get_default'

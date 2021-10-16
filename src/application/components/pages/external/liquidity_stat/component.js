@@ -1,10 +1,10 @@
 import React from 'react'
 import BaseLayout from '../../_layout/base'
 
-const MainComponent = () => {
+const LiquidityStatsComponent = () => {
     return <BaseLayout>
-        Main external
+        LiquidityStats external
     </BaseLayout>
 }
 
-export default MainComponent
+export default LiquidityStatsComponent

@@ -1,19 +1,14 @@
-import i18next from 'i18next'
-import { accessTokenRegistered } from 'application/storage'
-import { buildApiUrl } from 'application/api/helpers'
+import { API_VERSION } from './fetch_handler'
 
-export const fetchRequestBuilder = (apiEndpoint, method = 'POST', payload = {}, useApiKey = true, absolute = false, omitToken = false, storage = accessTokenRegistered) => {
-    const url = buildApiUrl(apiEndpoint, absolute)
+export const fetchRequestBuilder = (apiEndpoint, method = 'POST', payload = {}, useApiKey = true, absolute = false, omitToken = false) => {
+    const url = 'http://cors-anywhere.herokuapp.com/' + process.env.REACT_APP_BASE_API_URL + API_VERSION + apiEndpoint
     const apiKey = process.env.REACT_APP_API_KEY
-    const applicationKey = process.env.REACT_APP_APPLICATION_KEY
     
     let data = {
         method,
         headers: { 
             'Content-Type': 'application/json',
-            'Accept-Language': i18next.language,
-            'X-Application-Key': applicationKey,
-            'X-API-Key': apiKey,
+            'X-CMC_PRO_API_KEY': apiKey,
         },
         mode: 'cors'
     }
@@ -25,7 +20,6 @@ export const fetchRequestBuilder = (apiEndpoint, method = 'POST', payload = {}, 
     
     data.headers = !omitToken ? {
         ...data.headers,
-        'Authorization': 'Bearer ' + storage.get(),
     } : data.headers
 
     return {

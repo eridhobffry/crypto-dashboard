@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import MainComponent from "./component"
+import LiquidityStatsComponent from "./component"
 
 const mapStateToProps = (state) => ({
     
@@ -12,4 +12,4 @@ const mapDispatchToProps = {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(MainComponent)
+)(LiquidityStatsComponent)

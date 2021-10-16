@@ -1,3 +1,8 @@
 export const DefaultStore = {
-    default: null
+    crypto: {
+        request: false,
+        succeed: false,
+        failed: false,
+        payload: null
+    }
 }

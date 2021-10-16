@@ -5,6 +5,8 @@ export const HTTP_METHOD = {
     DELETE: 'DELETE'
 }
 
+export const API_VERSION = 'v1/'
+
 /**
  * Fetch Error Object that contains the http response 
  * 
