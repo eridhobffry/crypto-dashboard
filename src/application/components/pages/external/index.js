@@ -1,0 +1,1 @@
+export {MainExternal} from './main'
