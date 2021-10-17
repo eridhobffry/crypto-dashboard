@@ -20,7 +20,7 @@ const ResizableBox = ({
     return (
         <div style={{ margin: `0 auto` }}>
             {resizable ? (
-                <ReactResizableBox width={width} height={adaptedHeight}>
+                <ReactResizableBox width={adaptedWidth} height={adaptedHeight}>
                     <div
                         style={{
                             boxShadow: "0 20px 40px rgba(0,0,0,.1)",
