@@ -7,4 +7,6 @@ export const MainWrapper = styled.div`
     display: flex;
     flex-direction: column;
     overflow: auto;
+    background-color: ${p => p.theme.color.main};
+    color: ${p => p.theme.color.text};
 `

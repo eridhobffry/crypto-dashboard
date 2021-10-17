@@ -1,12 +1,12 @@
 import React, { Fragment, useEffect } from 'react'
 
 const OverviewLoader = (props) => {
-    const { chlidren, getCryptoListings, cryptoLoaded } = props
+    const { children, getCryptoListings, cryptoLoaded } = props
     useEffect(() => {
         !cryptoLoaded && getCryptoListings()
     }, [cryptoLoaded, getCryptoListings])
     return <Fragment>
-        {chlidren}
+        {children}
     </Fragment>
 }
 

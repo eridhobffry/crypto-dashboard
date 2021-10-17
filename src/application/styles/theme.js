@@ -2,7 +2,14 @@ const theme = {
     color: {
         body: '#ffffff',
         white: '#ffffff',
-        text: '#4d4d4d',
+        text: '#fff',
+        text10: '#ecf8fa',
+        main: '#17171a',
+        green: '#16c784',
+        blue: '#3861fb',
+        red: '#ea3943',
+        darkslate: '#222531',
+        darkslatelight: '#323546',
     },
     fontSize: {
         xxxLarge: '44px',

@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import BaseLayout from '../../_layout/base'
 import OverviewLoader from './overview_loader'
 
 const OverviewComponent = (props) => {
-    console.log('ER:: props', props)
+    const { cryptoLoaded } = props
+
+    console.log('ER:: cryptoLoaded', cryptoLoaded)
     return <BaseLayout>
         <OverviewLoader {...props}>
-
-            Overview external
+            {
+                cryptoLoaded && <Fragment>
+                    Overview
+                </Fragment>
+            }
         </OverviewLoader>
     </BaseLayout>
 }
