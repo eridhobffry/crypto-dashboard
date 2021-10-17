@@ -5,6 +5,7 @@ export const PaginationContainer = styled.ul`
   list-style-type: none;
   width: 100%;
   justify-content: center;
+  padding: 0px;
 `
 
 export const PaginationItem = styled.li`

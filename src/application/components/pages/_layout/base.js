@@ -8,7 +8,7 @@ import { withRouter } from 'react-router'
 import { GlobalStyle } from './global_style'
 import { ContentWrapper, MainContentWrapper, MainWrapper, SelectWrapper } from './styles'
 
-const BaseLayout = ({ children, updateShowData, currentPage, match }) => {
+const BaseLayout = ({ children, updateShowData, currentPage, match, numberToShow, }) => {
     const options = [
         { value: 20, label: 20 },
         { value: 50, label: 50 },
@@ -37,8 +37,8 @@ const BaseLayout = ({ children, updateShowData, currentPage, match }) => {
                         placeholder={'Show'}
                         onChange={(selected) => handleChange(selected)}
                         defaultValue={{
-                            label: 'All',
-                            value: 100
+                            label: numberToShow,
+                            value: numberToShow
                         }}
                     />
                 </SelectWrapper>

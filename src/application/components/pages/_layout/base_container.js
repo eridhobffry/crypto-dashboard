@@ -4,7 +4,8 @@ import { connect } from "react-redux"
 import BaseLayout from "./base"
 
 const mapStateToProps = (state) => ({
-    currentPage: state.common.currentPage
+    currentPage: state.common.currentPage,
+    numberToShow: state.common.numberToShow
 })
 
 const mapDispatchToProps = dispatch => ({

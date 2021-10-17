@@ -31,33 +31,31 @@ const Pagination = props => {
     };
 
     // let lastPage = paginationRange[paginationRange.length - 1];
-    return (
-        <PaginationContainer>
-            <PaginationItem
-                onClick={onPrevious}
-            >
-                <Arrow left/>
-            </PaginationItem>
-            {paginationRange.map(pageNumber => {
-                if (pageNumber === DOTS) {
-                    return <PaginationItem className='dots'>&#8230;</PaginationItem>;
-                }
+    return <PaginationContainer>
+        <PaginationItem
+            onClick={onPrevious}
+        >
+            <Arrow left />
+        </PaginationItem>
+        {paginationRange.map(pageNumber => {
+            if (pageNumber === DOTS) {
+                return <PaginationItem className='dots'>&#8230;</PaginationItem>;
+            }
 
-                return (
-                    <PaginationItem selected={pageNumber === currentPage}
-                        onClick={() => onPageChange(pageNumber)}
-                    >
-                        {pageNumber}
-                    </PaginationItem>
-                );
-            })}
-            <PaginationItem
-                onClick={onNext}
-            >
-                <Arrow />
-            </PaginationItem>
-        </PaginationContainer>
-    );
+            return (
+                <PaginationItem selected={pageNumber === currentPage}
+                    onClick={() => onPageChange(pageNumber)}
+                >
+                    {pageNumber}
+                </PaginationItem>
+            );
+        })}
+        <PaginationItem
+            onClick={onNext}
+        >
+            <Arrow />
+        </PaginationItem>
+    </PaginationContainer>
 };
 
 export default Pagination;

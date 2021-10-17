@@ -18,6 +18,26 @@ export const responseCryptoDataMapper = (data) => {
 
     return arr
 }
+export const responseCryptoRawDataMapper = (data) => {
+    let arr = []
+    let obj = {}
+    data.forEach(e => {
+        obj = {
+            id: e.id,
+            date_added: e.date_added,
+            last_updated: e.last_updated,
+            rank: e.cmc_rank,
+            name: e.name,
+            price: e.quote.USD.price,
+            percent_change_24h: e.quote.USD.percent_change_24h,
+            market_cap: e.quote.USD.market_cap,
+            volume_24h: e.quote.USD.volume_24h,
+        }
+        arr.push(obj)
+    });
+
+    return arr
+}
 
 function numberWithCommas(x) {
     var parts = x.toString().split(".");

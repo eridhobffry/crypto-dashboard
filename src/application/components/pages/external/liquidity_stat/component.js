@@ -1,9 +1,18 @@
-import React from 'react'
-import BaseLayout from '../../_layout/base'
+import OverviewLoader from 'application/common/overview_loader'
+import ChartScatter from 'application/components/template/charts'
+import React, { Fragment } from 'react'
+import BaseLayout from '../../_layout'
 
-const LiquidityStatsComponent = () => {
+const LiquidityStatsComponent = props => {
+    const { cryptoLoaded } = props
     return <BaseLayout>
-        LiquidityStats external
+        <OverviewLoader {...props}>
+            {
+                cryptoLoaded && <Fragment>
+                    <ChartScatter {...props} />
+                </Fragment>
+            }
+        </OverviewLoader>
     </BaseLayout>
 }
 
