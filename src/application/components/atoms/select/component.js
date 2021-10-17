@@ -8,7 +8,9 @@ const SelectComponent = ({
     placeholder,
     options, 
     defaultValue = null, 
-    onChange=()=>{},
+    onChange = () => { },
+    flexPosition = 'flex-start',
+    cssWidth,
 }) => {
     const htmlId = nanoid()
     const [selectedOption, setSelectedOption] = useState(defaultValue)
@@ -19,11 +21,12 @@ const SelectComponent = ({
         onChange(selectedOption)
     }
 
-    return <StyledSelectInputWithLabel id={`rollsSelect_${nanoid()}`} className={`rollsSelect`}>
+    return <StyledSelectInputWithLabel flexPosition={flexPosition} id={`rollsSelect_${nanoid()}`} className={`rollsSelect`}>
         {
             hasLabel && <label className='label' htmlFor={htmlId}>{label}</label>
         }
         <PureSelect
+            cssWidth={cssWidth}
             value={selectedOption}
             options={options}
             onChange={handleChange}

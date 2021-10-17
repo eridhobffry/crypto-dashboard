@@ -7,6 +7,7 @@ const mapStateToProps = (state) => ({
     cryptoFailed: state.crypto.failed,
     cryptoRequest: state.crypto.request,
     cryptoListingsData: state.crypto.payload,
+    numberToShow: state.common.numberToShow,
 })
 
 const mapDispatchToProps = dispatch => ({

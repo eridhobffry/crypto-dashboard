@@ -1,6 +1,9 @@
 import { ACTIONS } from "application/constants";
 
-export const getCryptoListingRequest = (metaData) => ({
+export const getCryptoListingRequest = (metaData = {
+    start: 1,
+    limit: 100,
+}) => ({
     type: ACTIONS.CRYPTO_GET_LISTING_REQUEST,
     metaData
 })

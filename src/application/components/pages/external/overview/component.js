@@ -1,16 +1,19 @@
+import { TablePagination } from 'application/components/template'
 import React, { Fragment } from 'react'
-import BaseLayout from '../../_layout/base'
+import BaseLayout from '../../_layout'
 import OverviewLoader from './overview_loader'
 
 const OverviewComponent = (props) => {
-    const { cryptoLoaded } = props
-
-    console.log('ER:: cryptoLoaded', cryptoLoaded)
+    const { cryptoLoaded, cryptoListingsData, numberToShow } = props
+    
     return <BaseLayout>
         <OverviewLoader {...props}>
             {
                 cryptoLoaded && <Fragment>
-                    Overview
+                    <TablePagination
+                        cryptoListingsData={cryptoListingsData}
+                        pageSize={numberToShow}
+                    />
                 </Fragment>
             }
         </OverviewLoader>

@@ -44,7 +44,7 @@ export const StyledPureSelect = styled.div`
         align-content:center;
         }
       & * {
-        border-radius: 0px !important;
+        border-radius: 8px;
       }
 
       & div.css-26l3qy-menu{
@@ -56,15 +56,16 @@ export const StyledPureSelect = styled.div`
 
 export const StyledSelectInputWithLabel = styled.div`
     display: flex;
+    z-index: 9999;
     flex-direction: column;
     flex: 1 1 100%;
-    height: ${props => props.cssHeight !== undefined ? props.cssHeight : 'auto'};
+    height: auto;
+    align-items: ${p => p.flexPosition};
     &>div{
-        height: ${props => props.cssHeight !== undefined ? props.cssHeight : 'auto'};
+        height: auto;
     }
-    margin-bottom: ${props => props.cssMarginBottom !== undefined ? props.cssMarginBottom : '0'};
     font-size: ${props => props.theme.fontSize.standard};
-    color: ${props => props.theme.color.anthracite};
+    color: black;
 
     & label.label {
         margin-bottom: 4px;

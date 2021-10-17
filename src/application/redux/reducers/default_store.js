@@ -4,5 +4,9 @@ export const DefaultStore = {
         succeed: false,
         failed: false,
         payload: null
+    },
+    common: {
+        numberToShow: 100,
+        currentPage: 1,
     }
 }
