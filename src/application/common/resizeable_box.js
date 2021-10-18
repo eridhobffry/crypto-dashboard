@@ -9,6 +9,7 @@ const ResizableBox = ({
     children,
     width = 1000,
     height = 500,
+    heightMobile = 500,
     resizable = true,
     style = {},
     className = "",
@@ -39,8 +40,8 @@ const ResizableBox = ({
             ) : (
                 <div
                     style={{
-                        width: `${width}px`,
-                            height: `${height}px`,
+                            width: `${adaptedWidth}px`,
+                            height: `${adaptedHeight}px`,
                             borderRadius: '10px',
                             boxShadow: "0 20px 40px rgba(0,0,0,.1)",
                             background: theme.color.text10,

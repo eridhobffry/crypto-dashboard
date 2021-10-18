@@ -1,6 +1,6 @@
 import { Pagination } from 'application/components/atoms'
 import { Table } from 'application/components/moleculs'
-import React, { useMemo, useState } from 'react'
+import React, { useMemo } from 'react'
 import styled from 'styled-components'
 
 const TablePaginationWrapper = styled.div`
@@ -11,7 +11,6 @@ const TablePaginationWrapper = styled.div`
 
 const TablePagination = ({ cryptoListingsData, pageSize, setCurrentPageStore, currentPage, numberToShow }) => {
     const { totalCount } = cryptoListingsData
-    console.log('ER:: currentPage', currentPage)
     const handleCurrentPage = (page) => {
         const pageStart = page === 1
         const metaData = {
